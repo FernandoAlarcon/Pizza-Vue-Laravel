@@ -25,4 +25,8 @@ class DataController extends Controller
             'Roll'     => $rolls
         ];
     }
+
+    public function NewIngrediente(){
+        
+    }
 }

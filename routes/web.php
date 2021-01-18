@@ -17,8 +17,10 @@ Route::get('/',  function () {
     return view('welcome');
 });
 
-//Route::get('/home_cosaca', [DataController::class, 'DataUsers' ]);
+//Route::get('/home_cosaca', [DataController::class, 'DataUsers' ]); NewIngrediente
 Route::get('/DataUser', 'App\Http\Controllers\DataController@DataUsers');
+Route::get('/NewIngrediente', 'App\Http\Controllers\DataController@NewIngrediente');
+
 
 $DataController = 'App\Http\Controllers\DataController';
 
