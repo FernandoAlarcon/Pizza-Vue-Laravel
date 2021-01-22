@@ -8,19 +8,20 @@
             <div v-if="Data.nombre_roll == 'Administrador' " >
                 <Administracion-component></Administracion-component>
             </div>
+            <div v-if="Data.nombre_roll == 'Cliente' " >
+                <Cliente-component></Cliente-component>
+            </div>
         </div>        
    </div>   
 </template>
 <script>
 //import Administracion-component from './Administracion-component.vue';
 Vue.component('Administracion-component', require('./Administrador.vue').default);
+Vue.component('Cliente-component', require('./Cliente.vue').default);
 
-    export default {
-        // components:{
-        //     Administracion
-        // },
-        mounted() {
-            //console.log('Component Index')
+
+    export default { 
+        mounted() { 
         },
         created: function(){
             this.getData();

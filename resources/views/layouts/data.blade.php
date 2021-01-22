@@ -4,4 +4,4 @@
             <index-component></index-component>
         </div>
     </div>
-</div>
+</div> 

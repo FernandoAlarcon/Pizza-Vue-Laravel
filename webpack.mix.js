@@ -20,6 +20,7 @@ mix.js(
 , 'public/js')
 .vue()
 .styles([
+    'resources/css/app.css',
     'resources/css/bootstrap.css',
     'resources/css/toastr.css'
 ], 'public/css/app.css');

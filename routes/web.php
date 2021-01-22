@@ -18,11 +18,33 @@ Route::get('/',  function () {
 });
 
 //Route::get('/home_cosaca', [DataController::class, 'DataUsers' ]); NewIngrediente
-Route::get('/DataUser', 'App\Http\Controllers\DataController@DataUsers');
-Route::get('/NewIngrediente', 'App\Http\Controllers\DataController@NewIngrediente');
+$DataController    = 'App\Http\Controllers\DataController';
+$PedidosController = 'App\Http\Controllers\PedidosController';
+
+Route::get('/DataUser', $DataController.'@DataUsers');
+Route::get('/DataIngredientes', $DataController.'@DataIngrediente');
+Route::get('/SizesPizza', $DataController.'@SizePizza');
+Route::get('/ListIngredientes', $DataController.'@IngredientesList');
+Route::get('/ListUsuarios', $DataController.'@ListaUsuarios');
+Route::get('/DeleIngredientes', $DataController.'@DeleteIngredientes');
 
 
-$DataController = 'App\Http\Controllers\DataController';
+Route::get('/PedidosAdmin', $PedidosController.'@DataPedidosAdmin'); 
+Route::get('/PedidosCliente', $PedidosController.'@DataPedidosCliente'); 
+
+Route::get('/DataPizza', $DataController.'@DataPizza'); 
+Route::get('/DeletePizza', $DataController.'@DeletePizza'); 
+
+/// CANCELAR 
+Route::get('/EstadoPedido', $PedidosController.'@EstadoPedidos'); 
+
+
+Route::post('/NewIngrediente', $DataController.'@NewIngrediente');
+Route::post('/NewPizza', $DataController.'@NuevaPizza');
+Route::post('/NuevoPedido', $PedidosController.'@NuevoPedido');
+//Route::get('/NuevoPedido', $PedidosController.'@NuevoPedido');
+
+
 
 Route::get('profile', function () {
     // Only verified users may enter...
